@@ -2,11 +2,21 @@
 	@extend .section;
 	&-list {
 		@extend .list;
-		display: flex;
 		margin-top: 0px;
 		margin-bottom: 0px;
+		width: calc((100% - 90px) / 4);
+		@media screen and (min-width: $tablet) and (max-width: 1199px) {
+			margin: -15px;
+			display: flex;
+			flex-wrap: wrap;
+			width: 354px;
+		}
+		@media screen and (min-width: $desktop) {
+			width: 270px;
+			display: flex;
+		}
 		& .header {
-			@include fonts(14px, 700);
+			@include fonts(14px, bold);
 			margin-top: 30px;
 			margin-bottom: 10px;
 			color: $primary-text-color;
@@ -22,16 +32,20 @@
 		}
 	}
 	&-item {
-		width: 270px;
-		width: calc((100% - 90px) / 4);
-		& + & {
-			margin-left: 30px;
+		width: 450px;
+		margin-bottom: 30px;
+		@media screen and (min-width: $desktop) {
+			width: calc((100% - 90px) / 4);
+			width: 270px;
 		}
 	}
 	&-bg {
 		@include centeredFlex(inline-flex);
-		width: 270px;
+		width: 450px;
 		height: 120px;
 		background-color: $secondary-bcg-color;
+		@media screen and (min-width: $desktop) {
+			width: 270px;
+		}
 	}
 }

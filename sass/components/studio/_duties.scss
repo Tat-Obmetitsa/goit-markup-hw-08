@@ -1,32 +1,35 @@
 .duties {
 	@extend .section;
-	& .container {
-		padding-bottom: 94px;
-	}
-	&-list {
-		@extend .list;
-		display: flex;
-		margin-top: 30px;
-	}
-	&-item {
-		position: relative;
-		& + & {
-			margin-left: 30px;
-			width: 370px;
+	display: none;
+		@media screen and (min-width: $desktop) {
+			& .container {
+				padding-bottom: 94px;
+			}
+			&-list {
+				@extend .list;
+				display: flex;
+				margin-top: 30px;
+			}
+			&-item {
+				position: relative;
+				& + & {
+					margin-left: 30px;
+					width: 370px;
+				}
+			}
+			&-text {
+				@include positionBL(absolute, 0px, 0px);
+				@include fonts(14px, 700);
+				right: 0px;
+				font-family: Roboto, sans-serif;
+				line-height: 1.1;
+				text-align: center;
+				letter-spacing: 0.03em;
+				text-transform: uppercase;
+				color: $white-text-color;
+				background-image: linear-gradient(to right, $gradient-guties-color, $gradient-guties-color);
+				padding: 27px 82px 27px 83px;
+				margin: 0px;
+			}		
 		}
-	}
-	&-text {
-		@include positionBL(absolute, 0px, 0px);
-		@include fonts(14px, 700);
-		right: 0px;
-		font-family: Roboto, sans-serif;
-		line-height: 1.1;
-		text-align: center;
-		letter-spacing: 0.03em;
-		text-transform: uppercase;
-		color: $white-text-color;
-		background-image: linear-gradient(to right, $gradient-guties-color, $gradient-guties-color);
-		padding: 27px 82px 27px 83px;
-		margin: 0px;
-	}
 }

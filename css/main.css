@@ -19,7 +19,7 @@ body {
   padding-top: 80px;
 }
 
-.list, .networks-list, .benefits-list, .duties-list, .team-list {
+.list, .networks-list, .benefits-list, .team-list {
   padding: 0;
   margin: 0;
   list-style: none;
@@ -42,23 +42,53 @@ img {
 .container, .footer-container {
   margin-left: auto;
   margin-right: auto;
-  width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
 }
 
+@media screen and (min-width: 480px) {
+  .container, .footer-container {
+    width: 480px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container, .footer-container {
+    width: 768px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container, .footer-container {
+    width: 1200px;
+  }
+}
+
 .section, .benefits, .duties, .team {
-  padding-top: 94px;
+  padding-top: 60px;
+}
+
+@media screen and (min-width: 1200px) {
+  .section, .benefits, .duties, .team {
+    padding-top: 94px;
+  }
 }
 
 .section-title {
   margin-top: 0;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   color: #212121;
-  font-weight: 700;
-  font-size: 36px;
+  font-weight: bold;
+  font-size: 28px;
   line-height: 1.17;
   text-align: center;
+}
+
+@media screen and (min-width: 1200px) {
+  .section-title {
+    margin-bottom: 50px;
+    font-size: 36px;
+  }
 }
 
 html {
@@ -950,16 +980,24 @@ template {
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/banner.jpg);
   background-size: cover;
   background-position: center;
-  height: 600px;
+  height: 400px;
   max-width: 1600px;
-  padding-top: 200px;
-  padding-bottom: 200px;
+  padding-top: 118px;
+  padding-bottom: 118px;
   margin-left: auto;
   margin-right: auto;
 }
 
+@media screen and (min-width: 1200px) {
+  .banner {
+    height: 600px;
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+}
+
 .banner-title {
-  font-size: 44px;
+  font-size: 26px;
   font-weight: 900;
   margin-top: 0;
   margin-bottom: 0;
@@ -969,22 +1007,49 @@ template {
   text-transform: uppercase;
 }
 
+@media screen and (min-width: 1200px) {
+  .banner-title {
+    font-size: 44px;
+    font-weight: 900;
+    line-height: 1.6;
+  }
+}
+
 .banner-button {
   margin-top: 30px;
   font-weight: bold;
 }
 
 .benefits-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   margin-top: 0px;
   margin-bottom: 0px;
+  width: calc((100% - 90px) / 4);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .benefits-list {
+    margin: -15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 354px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .benefits-list {
+    width: 270px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .benefits-list .header {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: bold;
   margin-top: 30px;
   margin-bottom: 10px;
   color: #212121;
@@ -1002,12 +1067,15 @@ template {
 }
 
 .benefits-item {
-  width: 270px;
-  width: calc((100% - 90px) / 4);
+  width: 450px;
+  margin-bottom: 30px;
 }
 
-.benefits-item + .benefits-item {
-  margin-left: 30px;
+@media screen and (min-width: 1200px) {
+  .benefits-item {
+    width: calc((100% - 90px) / 4);
+    width: 270px;
+  }
 }
 
 .benefits-bg {
@@ -1020,48 +1088,19 @@ template {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 270px;
+  width: 450px;
   height: 120px;
   background-color: #f5f4fa;
 }
 
-.duties .container, .duties .footer-container {
-  padding-bottom: 94px;
+@media screen and (min-width: 1200px) {
+  .benefits-bg {
+    width: 270px;
+  }
 }
 
-.duties-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-top: 30px;
-}
-
-.duties-item {
-  position: relative;
-}
-
-.duties-item + .duties-item {
-  margin-left: 30px;
-  width: 370px;
-}
-
-.duties-text {
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  font-size: 14px;
-  font-weight: 700;
-  right: 0px;
-  font-family: Roboto, sans-serif;
-  line-height: 1.1;
-  text-align: center;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: #ffffff;
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.8)), to(rgba(47, 48, 58, 0.8)));
-  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.8), rgba(47, 48, 58, 0.8));
-  padding: 27px 82px 27px 83px;
-  margin: 0px;
+.duties {
+  display: none;
 }
 
 .team {

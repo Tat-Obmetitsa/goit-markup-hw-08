@@ -4,20 +4,30 @@
 	background-image: linear-gradient(to right, $gradient-hero-color, $gradient-hero-color), url(../images/banner.jpg);
 	background-size: cover;
 	background-position: center;
-	height: 600px;
+	height: 400px;
 	max-width: 1600px;
-	padding-top: 200px;
-	padding-bottom: 200px;
+	padding-top: 118px;
+	padding-bottom: 118px;
 	margin-left: auto;
 	margin-right: auto;
+	@media screen and (min-width: $desktop) {
+		height: 600px;
+		padding-top: 200px;
+		padding-bottom: 200px;
+	}
+
 	&-title {
-		@include fonts(44px, 900);
+		@include fonts(26px, 900);
 		margin-top: 0;
 		margin-bottom: 0;
 		color: $white-text-color;
 		line-height: 1.36;
 		letter-spacing: 0.06em;
 		text-transform: uppercase;
+		@media screen and (min-width: $desktop) {
+			@include fonts(44px, 900);
+			line-height: 1.6;
+		}
 	}
 	&-button {
 		margin-top: 30px;
