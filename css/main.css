@@ -19,7 +19,7 @@ body {
   padding-top: 80px;
 }
 
-.list, .networks-list, .benefits-list, .team-list {
+.list, .networks-list, .benefits-list, .duties-list, .team-list {
   padding: 0;
   margin: 0;
   list-style: none;
@@ -1099,8 +1099,49 @@ template {
   }
 }
 
-.duties {
-  display: none;
+.duties .container, .duties .footer-container {
+  padding-bottom: 94px;
+}
+
+.duties-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 30px;
+}
+
+.duties-item {
+  position: relative;
+}
+
+.duties-item + .duties-item {
+  margin-left: 30px;
+  width: 370px;
+}
+
+.duties-text {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  font-size: 14px;
+  font-weight: 700;
+  right: 0px;
+  font-family: Roboto, sans-serif;
+  line-height: 1.1;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.8)), to(rgba(47, 48, 58, 0.8)));
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.8), rgba(47, 48, 58, 0.8));
+  padding: 27px 82px 27px 83px;
+  margin: 0px;
+}
+
+@media screen and (max-width: 1199px) {
+  .duties {
+    display: none;
+  }
 }
 
 .team {

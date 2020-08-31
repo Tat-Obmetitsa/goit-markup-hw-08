@@ -1,7 +1,5 @@
 .duties {
 	@extend .section;
-	display: none;
-		@media screen and (min-width: $desktop) {
 			& .container {
 				padding-bottom: 94px;
 			}
@@ -30,6 +28,8 @@
 				background-image: linear-gradient(to right, $gradient-guties-color, $gradient-guties-color);
 				padding: 27px 82px 27px 83px;
 				margin: 0px;
-			}		
-		}
+			}
+			@media screen and (max-width: 1199px) {
+				display: none;				
+			}
 }
