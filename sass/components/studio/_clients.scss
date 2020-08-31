@@ -1,0 +1,26 @@
+.clients {
+	padding-bottom: 94px;
+	&-list {
+		display: flex;
+	}
+}
+.clients-item {
+	&:not(:last-child) {
+		margin-right: 30px;
+	}
+	& .link {
+		@include bordered($icon-color);
+		@include centeredFlex(flex);
+		@include transitionNone;
+		height: 90px;
+		width: 170px;
+		border-radius: 4px;
+		background-color: $white-text-color;
+		fill: $icon-color;
+		&:focus,
+		&:hover {
+			@include bordered($accent-text-color);
+			fill: $accent-text-color;
+		}
+	}
+}

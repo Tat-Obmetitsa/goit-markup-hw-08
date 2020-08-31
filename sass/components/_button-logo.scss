@@ -1,0 +1,65 @@
+// Кнопки и логотипы
+.button {
+	color: $white-text-color;
+	background-color: $button-bcg-color;
+	font-family: Roboto, sans-serif;
+	line-height: 1.9;
+	text-align: center;
+	letter-spacing: 0.06em;
+	min-width: 200px;
+	height: 50px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+	border-radius: 4px;
+	outline: none;
+	cursor: pointer;
+	&:focus {
+		outline: none;
+	}
+	@include centeredFlex(inline-block);
+	@include fonts(16px, 400);
+	@include bordered(transparent);
+}
+.logo {
+	color: $primary-text-color;
+	font-family: Raleway, sans-serif;
+	line-height: 1.19;
+	text-decoration: none;
+	@include fonts(26px, 700);
+	&.padding {
+		padding-top: 24px;
+		padding-bottom: 25px;
+	}
+	&-accent {
+		color: $accent-text-color;
+		&-footer {
+			color: $white-text-color;
+		}
+	}
+}
+.button {
+	&-footer-link {
+		text-decoration: none;
+		color: $white-text-color;
+		font-weight: bold;
+		text-align: center;
+		line-height: 1.9;
+		letter-spacing: 0.06em;
+	}
+	&-twitter {
+		margin-left: 10px;
+		vertical-align: middle;
+	}
+	& > a:hover {
+		color: $white-text-color;
+	}
+}
+// Modal buttons
+.modal .banner-button {
+	@extend .button;
+	@include positionBL(absolute, 40px, 164px);
+	@include transitionNone;
+	&.button:focus,
+	&.button:hover {
+		background-color: $button-secondary-bg-color;
+	}
+}

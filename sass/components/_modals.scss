@@ -1,0 +1,205 @@
+// Модальное окно героя
+.backdrop {
+	@include positionTL(fixed, 0, 0);
+	@include transition(opacity);
+	width: 100%;
+	height: 100%;
+	background-color: $bgc-modal;
+	opacity: 1;
+	z-index: 2;
+	&.is-hidden {
+		@include transition(opacity);
+		opacity: 0;
+		pointer-events: none;
+		& .modal {
+			transform: translate(-50%, -50%) scale(1.2);
+		}
+	}
+}
+.modal {
+	@include positionTL(absolute, 50%, 50%);
+	transform: translate(-50%, -50%) scale(1);
+	padding: 40px;
+	min-width: 528px;
+	min-height: 581px;
+	background-color: $white-text-color;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	&-close {
+		@include positionTR(absolute, 8px, 8px);
+		@include bordered($primary-border-color);
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		background: $white-text-color;
+		fill: currentColor;
+		cursor: pointer;
+		&-button {
+			@include positionTR(absolute, 8px, 8px);
+			@include transition(fill);
+			fill: currentColor;
+		}
+		&:hover .modal-close-button {
+			fill: $accent-text-color;
+		}
+		&:focus .modal-close-button {
+			fill: $accent-text-color;
+		}
+		&:focus {
+			outline: none;
+		}
+	}
+	&-input {
+		@include bordered($modal-input-color);
+		@include transition(border);
+		display: block;
+		width: 100%;
+		height: 40px;
+		padding-left: 42px;
+		border-radius: 4px;
+		outline: none;
+		&:focus ~ .modal-icon,
+		&.modal-input:focus {
+			fill: $accent-text-color;
+			border-color: $accent-text-color;
+			overflow: visible;
+			outline: none;
+		}
+	}
+	&-label {
+		@include positionTL(absolute, -4px, 0);
+		@include fonts(12px, inherit);
+		transform: translateY(-100%);
+		line-height: 14px;
+		letter-spacing: 0.01em;
+		color: $secondary-text-color;
+	}
+	&-icon {
+		@include positionTL(absolute, 50%, 14px);
+		@include transition(fill);
+		transform: translateY(-50%);
+		display: inline-block;
+		fill: $primary-text-color;
+	}
+}
+.form {
+	width: 448px;
+	height: 501px;
+	margin: 0;
+	& > h2 {
+		@include fonts(20px, bold);
+		margin-top: 0px;
+		margin-bottom: 30px;
+		line-height: 23px;
+		text-align: center;
+		letter-spacing: 0.03em;
+	}
+	&-field {
+		display: block;
+		position: relative;
+		margin-top: 0px;
+		margin-top: 28px;
+	}
+}
+.form-field > textarea {
+	height: 120px;
+	resize: none;
+	padding: 12px 16px;
+	&::placeholder {
+		@include fonts(14px, inherit);
+		line-height: 1.1;
+		letter-spacing: 0.01em;
+		color: $placehilder-color;
+	}
+}
+.checkbox {
+	position: absolute;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	&-field {
+		@include centeredFlex(flex);
+		margin-top: 0;
+		margin-top: 20px;
+	}
+	&-icon {
+		@include transitionNone;
+		@include transition(border);
+		display: inline-block;
+		width: 16px;
+		height: 15px;
+		margin-left: 12px;
+		margin-right: 8px;
+		border: 2px solid $primary-text-color;
+		border-radius: 2px;
+		background-size: contain;
+		background-origin: border-box;
+		fill: transparent;
+	}
+	&:checked + .checkbox-icon {
+		@include transitionNone;
+		border: none;
+		background-color: $accent-text-color;
+		fill: $white-text-color;
+	}
+	&-label {
+		@include fonts(14px, 400);
+		line-height: 1.7;
+		letter-spacing: 0.03em;
+		color: $secondary-text-color;
+		&.underlined {
+			color: $accent-text-color;
+			text-decoration: underline;
+		}
+	}
+}
+// Модальное окно футера
+.footer {
+	&-email {
+		margin-top: 12px;
+		margin-right: 0px;
+		margin-left: 0px;
+		width: 570px;
+	}
+	&-input {
+		@include centeredFlex(block);
+		@include fonts(16px, 400);
+		@include bordered($footer-input-color);
+		width: 358px;
+		height: 50px;
+		padding-top: 15px;
+		padding-left: 16px;
+		padding-bottom: 15px;
+		margin: 0;
+		outline: none;
+		box-shadow: 0px 4px 4px $box-shadow;
+		border-radius: 4px;
+		line-height: 1.3;
+		letter-spacing: 0.03em;
+		color: $footer-rgba-color;
+		background: $footer-bcg-color;
+	}
+}
+.email {
+	&-item {
+		display: flex;
+		justify-content: space-between;
+		& .button {
+			@include centeredFlex(flex);
+			@include transitionNone;
+			margin-left: 12px;
+			width: 200px;
+			height: 50px;
+			fill: $white-text-color;
+		}
+	}
+	&-list {
+		display: flex;
+		align-items: flex-start;
+		margin-top: 20px;
+	}
+}

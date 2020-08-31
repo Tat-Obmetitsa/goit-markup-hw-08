@@ -1,0 +1,78 @@
+// Футер
+.footer {
+	padding-top: 60px;
+	padding-bottom: 60px;
+	background-color: $footer-bcg-color;
+	&-container {
+		@extend .container;
+		display: flex;
+		justify-content: space-between;
+	}
+	&-navi {
+		margin-right: 70px;
+		width: 270px;
+	}
+	&-title {
+		@include fonts(14px, bold);
+		color: $white-text-color;
+		line-height: 1.14;
+		text-transform: uppercase;
+	}
+	&-icon {
+		fill: white-text-color;
+	}
+}
+.address {
+	@include fonts(14px, 400);
+	margin-top: 20px;
+	margin-bottom: 9px;
+	color: $white-text-color;
+	line-height: 1.71;
+	font-style: normal;
+	text-decoration: none;
+	&-text {
+		@include fonts(14px, 400);
+		color: $footer-rgba-color;
+		line-height: 1.71;
+		text-decoration: none;
+		font-style: normal;
+	}
+}
+.address-list {
+	margin-top: 20px;
+	& > span:not(:last-child) {
+		margin-bottom: 9px;
+	}
+}
+// Footer icon list
+.networks {
+	width: 270px;
+	margin-top: 12px;
+	&-list {
+		@extend .list;
+		display: flex;
+	}
+	&-item:not(:last-child) {
+		margin-right: 10px;
+	}
+}
+.networks-item {
+	& .link {
+		@include centeredFlex(inline-flex);
+		@include transitionNone;
+		margin-top: 20px;
+		width: 44px;
+		height: 44px;
+		background-color: $footer-networks-bgc;
+		background-position: center;
+		border-radius: 50%;
+		fill: $white-text-color;
+		cursor: pointer;
+		&:focus {
+			background-color: $accent-text-color;
+		}
+		&:hover {
+			background-color: $accent-text-color;
+		}
+	}
+}

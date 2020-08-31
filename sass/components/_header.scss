@@ -1,0 +1,113 @@
+// Шапка
+.page-header {
+	width: 100%;
+	min-height: 80px;
+	background-color: $white-text-color;
+	border-bottom: 1px solid $header-border-color;
+	z-index: 1;
+	@include positionTL(fixed, 0, 0);
+}
+.head {
+	&-container {
+		@include centeredFlex(inline-flex);
+	}
+	&-navi {
+		display: flex;
+	}
+	&-links {
+		display: flex;
+	}
+}
+.head-contacts {
+	display: flex;
+	margin-left: 305px;
+	color: $primary-text-color;
+	& .link {
+		@include centeredFlex(flex);
+		@include fonts(14px, 500);
+		@include transitionNone;
+		padding-top: 32px;
+		padding-bottom: 32px;
+		color: $secondary-text-color;
+		fill: currentColor;
+		text-decoration: none;
+		line-height: 1.14;
+		letter-spacing: 0.02em;
+		&:focus {
+			color: $accent-text-color;
+		}
+		&:hover {
+			color: $accent-text-color;
+		}
+	}
+}
+.page {
+	display: flex;
+	margin-left: 85px;
+	&-item {
+		margin-right: 50px;
+		&:hover {
+			color: $accent-text-color;
+		}
+		&:focus {
+			color: $accent-text-color;
+		}
+		&:last-child {
+			margin: 0;
+		}
+	}
+	& .link {
+		display: block;
+		padding-top: 32px;
+		padding-bottom: 32px;
+		font-family: Roboto, sans-serif;
+		color: $primary-text-color;
+		line-height: 1.2;
+		letter-spacing: 0.02em;
+		@include fonts(14px, 500);
+		@include transitionNone;
+	}
+}
+.link {
+	&.current {
+		color: $accent-text-color;
+		position: relative;
+		&::after {
+			content: " ";
+			display: block;
+			width: 100%;
+			height: 4px;
+			border-radius: 2px;
+			background-color: $accent-text-color;
+			@include positionBL(absolute, -1px, 0);
+		}
+	}
+}
+// Header Contacts
+.contacts-item {
+	&:not(:last-child) {
+		margin-right: 30px;
+	}
+	& .link {
+		@include transitionNone;
+		&:focus {
+			fill: $accent-text-color;
+			color: $accent-text-color;
+			background-color: $white-text-color;
+		}
+		&:hover {
+			fill: $accent-text-color;
+			color: $accent-text-color;
+			background-color: $white-text-color;
+		}
+	}
+}
+.icon {
+	&-envelope {
+		background-size: 15px 10px;
+		margin-right: 10px;
+	}
+	&-phone {
+		margin-right: 10px;
+	}
+}
