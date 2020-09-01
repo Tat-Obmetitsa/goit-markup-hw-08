@@ -3,14 +3,31 @@
 	padding-top: 60px;
 	padding-bottom: 60px;
 	background-color: $footer-bcg-color;
+	width: 100%;
+	text-align: center;
 	&-container {
+		display: block;
 		@extend .container;
-		display: flex;
-		justify-content: space-between;
+		@media screen and (min-width: $desktop) {
+			display: flex;
+			justify-content: space-between;
+		}
+		@media screen and (min-width: $tablet) and (max-width: 1199px) {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
 	}
 	&-navi {
-		margin-right: 70px;
-		width: 270px;
+		@media screen and (min-width: $desktop) {
+			margin-right: 70px;
+			width: 270px;
+			@media screen and (min-width: $tablet) and (max-width: 1199px) {
+				margin-left: 76px;
+
+				max-width: 232px;
+			}
+		}
 	}
 	&-title {
 		@include fonts(14px, bold);
@@ -43,17 +60,31 @@
 	& > span:not(:last-child) {
 		margin-bottom: 9px;
 	}
+	@media screen and (min-width: $desktop) {
+		margin-top: 20px;
+	}
 }
 // Footer icon list
 .networks {
+	margin-top: 60px;
+	@media screen and (min-width: $desktop) {
 	width: 270px;
 	margin-top: 12px;
+	}
 	&-list {
 		@extend .list;
 		display: flex;
+		@media screen and (max-width: 753px) {
+			justify-content: center;
+		}
 	}
 	&-item:not(:last-child) {
 		margin-right: 10px;
+	}
+	@media screen and (min-width: $tablet) and (max-width: 1199px) {
+		margin-right: 89px;
+		margin-top: 0;
+		max-width: 206px;
 	}
 }
 .networks-item {

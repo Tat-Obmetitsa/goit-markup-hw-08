@@ -1,19 +1,21 @@
 .benefits {
 	@extend .section;
+	& .container {
+		padding-bottom: 60px;
+	}
 	&-list {
 		@extend .list;
+		width: 100%;
 		margin-top: 0px;
 		margin-bottom: 0px;
-		width: calc((100% - 90px) / 4);
 		@media screen and (min-width: $tablet) and (max-width: 1199px) {
 			margin: -15px;
 			display: flex;
 			flex-wrap: wrap;
-			width: 354px;
 		}
 		@media screen and (min-width: $desktop) {
-			width: 270px;
 			display: flex;
+			width: calc((100% - 120px) / 4);
 		}
 		& .header {
 			@include fonts(14px, bold);
@@ -22,6 +24,9 @@
 			color: $primary-text-color;
 			line-height: 1.14;
 			text-transform: uppercase;
+			@media screen and (max-width: 767px) {
+				text-align: center;
+			}
 		}
 		& .text {
 			@include fonts(14px, 400);
@@ -32,20 +37,27 @@
 		}
 	}
 	&-item {
-		width: 450px;
+		max-width: 450px;
 		margin-bottom: 30px;
+		@media screen and (min-width: $tablet) and (max-width: 1199px) {
+			margin: 15px;
+			width: calc(50% - 30px);
+		}
 		@media screen and (min-width: $desktop) {
 			width: calc((100% - 90px) / 4);
-			width: 270px;
 		}
 	}
 	&-bg {
 		@include centeredFlex(inline-flex);
-		width: 450px;
+		margin-bottom: 30px;
 		height: 120px;
 		background-color: $secondary-bcg-color;
+		width: 100%;
+		@media screen and (max-width: 767px) {
+			max-width: 450px;
+		}
 		@media screen and (min-width: $desktop) {
-			width: 270px;
+			width: calc((100% - 90px) / 4);
 		}
 	}
 }

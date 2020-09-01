@@ -28,6 +28,8 @@ a[href]:focus {
 }
 img {
 	display: block;
+	width: 100%;
+	height: auto;
 }
 
 // Containers
@@ -36,21 +38,23 @@ img {
 	margin-right: auto;
 	padding-left: 15px;
 	padding-right: 15px;
-	@media screen and (min-width: $mobile) {
+	width: 100%;
+	@media screen and (min-width: 480px) {
 		width: 480px;
 	  }
 	
-	  @media screen and (min-width: $tablet) {
+	  @media screen and (min-width: 754px) {
 		width: 768px;
 	  }
 	
-	  @media screen and (min-width: $desktop) {
+	  @media screen and (min-width: 1200px) {
 		width: 1200px;
 	  }
 }
 .section {
+	width: 100%;
 	padding-top: 60px;
-	@media screen and (min-width: $desktop) {
+	@media screen and (min-width: 1200px) {
 		padding-top: 94px;
 	}
 	&-title {
@@ -61,7 +65,7 @@ img {
 		font-size: 28px;
 		line-height: 1.17;
 		text-align: center;
-		@media screen and (min-width: $desktop) {
+		@media screen and (min-width: 1200px) {
 			margin-bottom: 50px;
 			font-size: 36px;
 		}

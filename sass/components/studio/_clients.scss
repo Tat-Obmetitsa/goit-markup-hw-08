@@ -1,19 +1,26 @@
 .clients {
-	padding-bottom: 94px;
+	padding-bottom: 60px;
+	& .section-title {
+		margin-bottom: 30px;
+	}
 	&-list {
 		display: flex;
+		@media screen and (max-width: 1199px) {
+			flex-wrap: wrap;
+			margin: -15px;
+		}
+	}
+	@media screen and (min-width: $desktop) {
+		padding-bottom: 94px;
 	}
 }
 .clients-item {
-	&:not(:last-child) {
-		margin-right: 30px;
-	}
+	margin-top: 30px;
 	& .link {
 		@include bordered($icon-color);
 		@include centeredFlex(flex);
 		@include transitionNone;
 		height: 90px;
-		width: 170px;
 		border-radius: 4px;
 		background-color: $white-text-color;
 		fill: $icon-color;
@@ -23,4 +30,16 @@
 			fill: $accent-text-color;
 		}
 	}
+	@media screen and (max-width: 767px) {
+		min-width: calc(50% - 30px);
+		margin: 15px;
+	  }
+	
+	  @media screen and (min-width: $tablet) and (max-width: 1199px) {
+		min-width: calc((100% - 90px) / 3);
+	  }
+	
+	  @media screen and (min-width: $desktop) {
+		min-width: calc((100% - 180px) / 6);
+	  }
 }

@@ -24,6 +24,9 @@
 		line-height: 1.36;
 		letter-spacing: 0.06em;
 		text-transform: uppercase;
+		@media screen and (min-width: $tablet) and (max-width: 1199px) {
+			@include fonts(26px, 900);
+		}
 		@media screen and (min-width: $desktop) {
 			@include fonts(44px, 900);
 			line-height: 1.6;

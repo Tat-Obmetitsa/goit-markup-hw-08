@@ -163,14 +163,20 @@
 		margin-top: 12px;
 		margin-right: 0px;
 		margin-left: 0px;
-		width: 570px;
+		width: 100%;
+		@media screen and (max-width: 1199px) {
+			margin-top: 60px;
+		}
+		@media screen and (min-width: $desktop) {
+			width: 570px;
+		}
 	}
 	&-input {
 		@include centeredFlex(block);
 		@include fonts(16px, 400);
 		@include bordered($footer-input-color);
-		width: 358px;
 		height: 50px;
+		width: 100%;
 		padding-top: 15px;
 		padding-left: 16px;
 		padding-bottom: 15px;
@@ -186,20 +192,32 @@
 }
 .email {
 	&-item {
-		display: flex;
+		width: 100%;
+		@media screen and (min-width: $desktop) {
 		justify-content: space-between;
+		display: flex;
+		}
 		& .button {
 			@include centeredFlex(flex);
 			@include transitionNone;
-			margin-left: 12px;
 			width: 200px;
 			height: 50px;
 			fill: $white-text-color;
+			@media screen and (max-width: 1199px) {
+				margin-top: 20px;
+				margin-right: auto;
+				margin-left: auto;
+			}
+			@media screen and (min-width: $desktop) {
+				margin-left: 12px;
+			}
 		}
 	}
 	&-list {
-		display: flex;
-		align-items: flex-start;
 		margin-top: 20px;
+		@media screen and (max-width: 753px) {
+			@include centeredFlex(flex);
+			flex-direction: column;
+		}
 	}
 }
