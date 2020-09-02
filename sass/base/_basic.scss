@@ -13,6 +13,9 @@ body {
 	letter-spacing: 0.03em;
 	padding-top: 80px;
 }
+body.modal-open {
+	overflow: hidden;
+}
 .list {
 	padding: 0;
 	margin: 0;

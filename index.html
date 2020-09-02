@@ -15,6 +15,12 @@
 					<div class="head-links">
 						<div>
 							<nav class="head-navi">
+								<button type="button" class="menu-button is-open" aria-expanded="false" aria-controls="menu-container" data-menu-button>
+									<svg width="40px" height="40px" aria-label="Переключатель мобильного меню">
+										<use class="icon-cross" href="./images/sprite.svg#cross-1"></use>
+										<use class="icon-menu" href="./images/sprite.svg#menu"></use>
+									</svg>
+								</button>
 								<a href="./index.html" class="logo padding">
 									<span class="logo">
 										<span class="logo-accent">Web</span>
@@ -32,7 +38,11 @@
 										<a href="" class="link">Контакты</a>
 									</li>
 								</ul>
+								<div class="menu-container is-open" id="menu-container" data-menu >контентное меню</div>
 							</nav>
+						</div>
+						<div class="menu-container">
+
 						</div>
 						<ul class="head-contacts list">
 							<li class="contacts-item mail">
@@ -583,5 +593,6 @@
 			</div>
 		</div>
 		<script src="./js/modal.js"></script>
+		<script src="./js/menu.js"></script>
 	</body>
 </html>

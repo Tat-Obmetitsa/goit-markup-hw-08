@@ -19,6 +19,10 @@ body {
   padding-top: 80px;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 .list, .networks-list, .filter, .cards-list {
   padding: 0;
   margin: 0;
@@ -413,6 +417,7 @@ template {
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
   z-index: 2;
+  overflow-y: scroll;
 }
 
 .backdrop.is-hidden {
@@ -434,12 +439,28 @@ template {
   -webkit-transform: translate(-50%, -50%) scale(1);
           transform: translate(-50%, -50%) scale(1);
   padding: 40px;
-  min-width: 528px;
-  min-height: 581px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
   background-color: #ffffff;
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+}
+
+@media screen and (max-width: 767px) {
+  .modal {
+    max-width: 450px;
+    max-height: 609px;
+    margin: 15px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .modal {
+    min-width: 528px;
+    min-height: 581px;
+  }
 }
 
 .modal-close {
@@ -481,11 +502,16 @@ template {
   -webkit-transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: block;
-  width: 100%;
   height: 40px;
   padding-left: 42px;
   border-radius: 4px;
   outline: none;
+}
+
+@media screen and (max-width: 767px) {
+  .modal-input {
+    max-width: 370px;
+  }
 }
 
 .modal-input:focus ~ .modal-icon, .modal-input.modal-input:focus {
@@ -756,164 +782,6 @@ template {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-}
-
-.page-header {
-  width: 100%;
-  min-height: 80px;
-  background-color: #ffffff;
-  border-bottom: 1px solid #ececec;
-  z-index: 1;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-.head-container {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.head-navi {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.head-links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.head-contacts {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-left: 305px;
-  color: #212121;
-}
-
-.head-contacts .link {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-size: 14px;
-  font-weight: 500;
-  -webkit-transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  padding-top: 32px;
-  padding-bottom: 32px;
-  color: #757575;
-  fill: currentColor;
-  text-decoration: none;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-}
-
-.head-contacts .link:focus {
-  color: #2196f3;
-}
-
-.head-contacts .link:hover {
-  color: #2196f3;
-}
-
-.page {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-left: 85px;
-}
-
-.page-item {
-  margin-right: 50px;
-}
-
-.page-item:hover {
-  color: #2196f3;
-}
-
-.page-item:focus {
-  color: #2196f3;
-}
-
-.page-item:last-child {
-  margin: 0;
-}
-
-.page .link {
-  display: block;
-  padding-top: 32px;
-  padding-bottom: 32px;
-  font-family: Roboto, sans-serif;
-  color: #212121;
-  line-height: 1.2;
-  letter-spacing: 0.02em;
-  font-size: 14px;
-  font-weight: 500;
-  -webkit-transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.link.current {
-  color: #2196f3;
-  position: relative;
-}
-
-.link.current::after {
-  content: " ";
-  display: block;
-  width: 100%;
-  height: 4px;
-  border-radius: 2px;
-  background-color: #2196f3;
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-}
-
-.contacts-item:not(:last-child) {
-  margin-right: 30px;
-}
-
-.contacts-item .link {
-  -webkit-transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.contacts-item .link:focus {
-  fill: #2196f3;
-  color: #2196f3;
-  background-color: #ffffff;
-}
-
-.contacts-item .link:hover {
-  fill: #2196f3;
-  color: #2196f3;
-  background-color: #ffffff;
-}
-
-.icon-envelope {
-  background-size: 15px 10px;
-  margin-right: 10px;
-}
-
-.icon-phone {
-  margin-right: 10px;
 }
 
 .footer {
