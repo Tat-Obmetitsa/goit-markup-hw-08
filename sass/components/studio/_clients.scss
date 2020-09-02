@@ -5,9 +5,9 @@
 	}
 	&-list {
 		display: flex;
+		margin: -15px;
 		@media screen and (max-width: 1199px) {
 			flex-wrap: wrap;
-			margin: -15px;
 		}
 	}
 	@media screen and (min-width: $desktop) {
@@ -15,7 +15,7 @@
 	}
 }
 .clients-item {
-	margin-top: 30px;
+	margin: 15px;
 	& .link {
 		@include bordered($icon-color);
 		@include centeredFlex(flex);
@@ -32,7 +32,6 @@
 	}
 	@media screen and (max-width: 767px) {
 		min-width: calc(50% - 30px);
-		margin: 15px;
 	  }
 	
 	  @media screen and (min-width: $tablet) and (max-width: 1199px) {
