@@ -56,10 +56,12 @@
 // Modal buttons
 .modal .banner-button {
 	@extend .button;
-	@include positionBL(absolute, 40px, 164px);
 	@include transitionNone;
 	&.button:focus,
 	&.button:hover {
 		background-color: $button-secondary-bg-color;
 	}
+	@include centeredFlex(flex);
+	margin-right: auto;
+	margin-left: auto;
 }

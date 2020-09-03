@@ -395,11 +395,19 @@ template {
 }
 
 .modal .banner-button {
-  position: absolute;
-  bottom: 40px;
-  left: 164px;
   -webkit-transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .modal .banner-button.button:focus, .modal .banner-button:focus, .modal .banner-button.button:hover, .modal .banner-button:hover {
@@ -414,6 +422,7 @@ template {
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
   height: 100%;
+  display: block;
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
   z-index: 2;
@@ -433,34 +442,17 @@ template {
 }
 
 .modal {
+  padding: 40px;
+  margin: 15px;
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%) scale(1);
           transform: translate(-50%, -50%) scale(1);
-  padding: 40px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
   background-color: #ffffff;
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-}
-
-@media screen and (max-width: 767px) {
-  .modal {
-    max-width: 450px;
-    max-height: 609px;
-    margin: 15px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .modal {
-    min-width: 528px;
-    min-height: 581px;
-  }
 }
 
 .modal-close {
@@ -502,16 +494,12 @@ template {
   -webkit-transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: block;
+  margin: 0;
+  width: 100%;
   height: 40px;
   padding-left: 42px;
   border-radius: 4px;
   outline: none;
-}
-
-@media screen and (max-width: 767px) {
-  .modal-input {
-    max-width: 370px;
-  }
 }
 
 .modal-input:focus ~ .modal-icon, .modal-input.modal-input:focus {
@@ -547,19 +535,50 @@ template {
 }
 
 .form {
-  width: 448px;
-  height: 501px;
-  margin: 0;
+  max-width: 448px;
+  margin: 15px;
 }
 
-.form > h2 {
+@media screen and (max-width: 479px) {
+  .form {
+    max-width: 609px;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .form {
+    max-width: 450px;
+    max-height: 609px;
+    margin: 0px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .form {
+    width: 100%;
+    max-width: 528px;
+    max-height: 581px;
+  }
+}
+
+.form > b {
   font-size: 20px;
   font-weight: bold;
   margin-top: 0px;
   margin-bottom: 30px;
-  line-height: 23px;
+  display: block;
+  line-height: 1.5;
   text-align: center;
   letter-spacing: 0.03em;
+}
+
+@media screen and (min-width: 1200px) {
+  .form > b {
+    line-height: 23px;
+  }
 }
 
 .form-field {
