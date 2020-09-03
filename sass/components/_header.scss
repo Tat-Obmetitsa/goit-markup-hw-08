@@ -1,153 +1,233 @@
-// // Шапка
-// .page-header {
-// 	width: 100%;
-// 	min-height: 80px;
-// 	background-color: $white-text-color;
-// 	border-bottom: 1px solid $header-border-color;
-//     z-index: 1;
-    
-// }
-// .head {
-// 	&-container {
-// 		@include centeredFlex(inline-flex);
-// 	}
-// 	&-navi {
-// 		display: flex;
-// 	}
-// 	&-links {
-// 		display: flex;
-// 	}
-// }
-// .head-contacts {
-// 	display: flex;
-// 	margin-left: 305px;
-// 	color: $primary-text-color;
-// 	& .link {
-// 		@include centeredFlex(flex);
-// 		@include fonts(14px, 500);
-// 		@include transitionNone;
-// 		padding-top: 32px;
-// 		padding-bottom: 32px;
-// 		color: $secondary-text-color;
-// 		fill: currentColor;
-// 		text-decoration: none;
-// 		line-height: 1.14;
-// 		letter-spacing: 0.02em;
-// 		&:focus {
-// 			color: $accent-text-color;
-// 		}
-// 		&:hover {
-// 			color: $accent-text-color;
-// 		}
-// 	}
-// }
-// .page {
-// 	display: flex;
-// 	margin-left: 85px;
-// 	&-item {
-// 		margin-right: 50px;
-// 		&:hover {
-// 			color: $accent-text-color;
-// 		}
-// 		&:focus {
-// 			color: $accent-text-color;
-// 		}
-// 		&:last-child {
-// 			margin: 0;
-// 		}
-// 	}
-// 	& .link {
-// 		display: block;
-// 		padding-top: 32px;
-// 		padding-bottom: 32px;
-// 		font-family: Roboto, sans-serif;
-// 		color: $primary-text-color;
-// 		line-height: 1.2;
-// 		letter-spacing: 0.02em;
-// 		@include fonts(14px, 500);
-// 		@include transitionNone;
-// 	}
-// }
-// .link {
-// 	&.current {
-// 		color: $accent-text-color;
-// 		position: relative;
-// 		&::after {
-// 			content: " ";
-// 			display: block;
-// 			width: 100%;
-// 			height: 4px;
-// 			border-radius: 2px;
-// 			background-color: $accent-text-color;
-// 			@include positionBL(absolute, -1px, 0);
-// 		}
-// 	}
-// }
+// Шапка
+.page-header {
+	width: 100%;
+    max-height: 60px;
+	background-color: $white-text-color;
+	border-bottom: 1px solid $header-border-color;
+    z-index: 1;
+    & .container {
+        width: 100%;
+        margin: 0;
+    }
+    @media screen and (min-width: $tablet) {
+        height: 81px;
+    }
+
+}
+.head {
+	&-container {
+        @include centeredFlex(inline-flex);
+        justify-content: space-between;
+        max-height: 60px;
+	}
+	&-navi {
+        @media screen and (max-width: $tablet) {
+            margin-bottom: 60px;
+        }
+        @media screen and (min-width: $tablet) and (max-width: 1199px) {
+            display: flex;
+            margin-top: 32px;
+            margin-bottom: 32px;
+        }
+	}
+	&-links {
+        @media screen and (min-width: $tablet) {
+            display: flex;
+        }
+	}
+}
+.head-contacts {
+    display: flex;
+    color: $primary-text-color;
+    @media screen and (max-width: 767px) {
+        flex-direction: column;
+        justify-content: center;
+    }
+    @media screen and (min-width: $tablet) and (max-width: 1199px) {
+        margin-top: 21px;
+        margin-left: 84px;
+        flex-direction: column;
+        align-content: flex-start;
+        
+    }
+    @media screen and (min-width: $desktop) {
+        margin-left: 305px;
+    }
+	& .link {
+		@include fonts(14px, 500);
+		@include transitionNone;
+		padding-top: 32px;
+		padding-bottom: 32px;
+		color: $secondary-text-color;
+		fill: currentColor;
+		text-decoration: none;
+		line-height: 1.14;
+		letter-spacing: 0.02em;
+		&:focus {
+			color: $accent-text-color;
+		}
+		&:hover {
+			color: $accent-text-color;
+        }
+        @media screen and (min-width: $desktop) {
+            @include centeredFlex(flex);
+        }
+	}
+}
+.page {
+    text-align: center;
+    @media screen and (min-width: $tablet) {
+        display: flex;
+    }
+    @media screen and (min-width: $desktop) {
+        margin-left: 85px;
+    }
+	&-item {
+		&:hover {
+			color: $accent-text-color;
+		}
+		&:focus {
+			color: $accent-text-color;
+		}
+		&:last-child {
+			margin: 0;
+        }
+        @media screen and (min-width: $tablet) {
+         margin-right: 50px;
+        }
+        @media screen and (min-width: $desktop) {
+            margin-right: 50px;
+        }
+	}
+	& .link {
+		padding-top: 32px;
+		padding-bottom: 32px;
+		font-family: Roboto, sans-serif;
+		color: $primary-text-color;
+		line-height: 1.2;
+		letter-spacing: 0.02em;
+		@include fonts(14px, 500);
+		@include transitionNone;
+	}
+}
+@media screen and (max-width: $tablet) {
+    .page-item:not(:last-child) {
+        margin-bottom: 40px;
+    }
+}
+.link {
+	&.current {
+		color: $accent-text-color;
+		position: relative;
+		&::after {
+			content: " ";
+			display: block;
+            width: 100%;
+			height: 4px;
+			border-radius: 2px;
+			background-color: $accent-text-color;
+			@media screen and (max-width: 767px) {
+                @include positionBL(absolute, 24px, 0);
+            }
+            @media screen and (min-width: $tablet) {
+                @include positionBL(absolute, -1px, 0);
+            }
+		}
+	}
+}
 // // Header Contacts
-// .contacts-item {
-// 	&:not(:last-child) {
-// 		margin-right: 30px;
-// 	}
-// 	& .link {
-// 		@include transitionNone;
-// 		&:focus {
-// 			fill: $accent-text-color;
-// 			color: $accent-text-color;
-// 			background-color: $white-text-color;
-// 		}
-// 		&:hover {
-// 			fill: $accent-text-color;
-// 			color: $accent-text-color;
-// 			background-color: $white-text-color;
-// 		}
-// 	}
-// }
-// .icon {
-// 	&-envelope {
-// 		background-size: 15px 10px;
-// 		margin-right: 10px;
-// 	}
-// 	&-phone {
-// 		margin-right: 10px;
-// 	}
-// }
-// // Header Menu-Button
-// .menu-button {
-// 	outline: none;
-// 	display: inline-flex;
-// 	margin: 0;
-// 	padding: 0;
-// 	border: none;
-// 	height: 40px;
-// 	width: 40px;
-// 	background-color: transparent;
-// 	& .icon-menu {
-// 		display: block;
-// 	}
-// 	& .icon-cross {
-// 		display: none;
-// 	}
-// 	&.is-open .icon-menu {
-// 		display: none;
-// 	}
-// 	&.is-open .icon-cross {
-// 		display: block;
-// 	}
-// }
-// .menu-container {
-// 	position: absolute;
-// 	display: none;
-// 	top: 100%;
-// 	left: 0;
-// 	width: 100%;
-// 	@include fonts(18px, 500);
-// 	background-color: #fff;
-// 	text-align: center;
-// 	padding: 20px;
-// 	&.is-open {
-// 		display: block;
-// 	}
-// }
-// .page-header {
-// 	position: relative;
-// }
+.contacts-item {
+	& .link {
+		@include transitionNone;
+		&:focus {
+			fill: $accent-text-color;
+			color: $accent-text-color;
+			background-color: $white-text-color;
+		}
+		&:hover {
+			fill: $accent-text-color;
+			color: $accent-text-color;
+			background-color: $white-text-color;
+		}
+    }
+}
+.contacts-item:not(:last-child) {
+    @media screen and (max-width: 767px) {
+        margin-bottom: 16px;
+    }
+    @media screen and (min-width: $desktop) {
+        margin-right: 30px;
+    }
+}
+.icon {
+	&-envelope {
+		background-size: 15px 10px;
+		margin-right: 10px;
+	}
+	&-phone {
+		margin-right: 10px;
+	}
+}
+
+// Header Menu-Button
+.menu-button {
+	outline: none;
+	display: inline-flex;
+	margin-top: 10px;
+	padding: 0;
+	border: none;
+	height: 40px;
+    width: 40px;
+    fill: black;
+	background-color: transparent;
+	& .icon-menu {
+		display: block;
+	}
+	& .icon-cross {
+		display: none;
+	}
+	&.is-open .icon-menu {
+		display: none;
+	}
+	&.is-open .icon-cross {
+		display: block;
+    }
+    &:hover,
+    &:focus {
+      fill: $accent-text-color;
+    }
+    @media screen  and (min-width: $tablet) {
+        display: none;
+    }
+}
+.menu-container {
+    width: 100%;
+    padding: 60px, 15px;
+	@include fonts(18px, 500);
+	background-color: #fff;
+    text-align: center;
+    @media screen and (max-width: 767px) {
+    border-top: 1px solid $header-border-color;
+    position: absolute;
+	top: 100%;
+    left: 0;
+    display: none;
+    &.is-open {
+		display: block;
+    }
+}
+}
+.menu {
+    text-align: center;
+    @media screen and (max-width: 767px) {
+        padding: 60px;
+    }
+    @media screen and (min-width: $tablet) {
+        display: flex;
+        flex-grow: 1;
+        justify-content: space-between;   
+       }
+}
+.page-header {
+	position: relative;
+}
