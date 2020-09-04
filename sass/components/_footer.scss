@@ -4,7 +4,9 @@
 	padding-bottom: 60px;
 	background-color: $footer-bcg-color;
 	width: 100%;
-	text-align: center;
+	@media screen and (max-width: 1199px) {
+		text-align: center;
+	}
 	&-container {
 		display: block;
 		@extend .container;
