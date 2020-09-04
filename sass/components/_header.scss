@@ -11,13 +11,14 @@
     @media screen and (min-width: $tablet) {
         min-height: 81px;
     }
+    @media screen and (min-width: $desktop) {
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 1200px;
+    }
 
 }
 .head {
-	&-container {
-        display: inline-flex;
-        justify-content: space-between;
-	}
 	&-navi {
         @media screen and (max-width: $tablet) {
             margin-bottom: 60px;
@@ -35,17 +36,25 @@
         }
 	}
 }
-@media screen and (max-width: 767px) {
-    .head-container {
+.head-container {
+    display: inline-flex;
+    @media screen and (max-width: 1199px) {
+        justify-content: space-between;
+    }
+    @media screen and (max-width: 767px) {
         width: 60px;
     }
-}
-@media screen and (min-width: $tablet) {
-    .head-container {
+    @media screen and (min-width: $tablet) {
         width: 80px;
         border-bottom: 1px solid $header-border-color;
     }
+    @media screen {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
+
+
 .head-contacts {
    
     color: $primary-text-color;
@@ -59,6 +68,8 @@
         
     }
     @media screen and (min-width: $desktop) {
+        @include centeredFlex (flex);
+        text-align: center;
         margin-left: 305px;
     }
 	& .link {
@@ -70,7 +81,11 @@
 		fill: currentColor;
 		text-decoration: none;
 		line-height: 1.14;
-		letter-spacing: 0.02em;
+        letter-spacing: 0.02em;
+        @media screen and (max-width: 767px) {
+            @include fonts(18px, 500);
+            line-height: 1.16;
+        }
 		&:focus {
 			color: $accent-text-color;
 		}
@@ -88,7 +103,7 @@
         display: flex;
     }
     @media screen and (min-width: $desktop) {
-        margin-left: 85px;
+        margin-left: 93px;
     }
 	&-item {
 		&:hover {
@@ -115,7 +130,15 @@
 		line-height: 1.2;
 		letter-spacing: 0.02em;
 		@include fonts(14px, 500);
-		@include transitionNone;
+        @include transitionNone;
+        @media screen and (max-width: 767px) {
+            @include fonts(18px, 500);
+            line-height: 1.16;
+        }
+        @media screen and (min-width: $tablet) and (max-width: 1199px) {
+            @include fonts(12px, 500);
+            line-height: 1.16;
+        }
 	}
 }
 @media screen and (max-width: $tablet) {
@@ -137,11 +160,21 @@
 			@media screen and (max-width: 767px) {
                 @include positionBL(absolute, 24px, 0);
             }
-            @media screen and (min-width: $tablet) {
+            @media screen and (min-width: $tablet) and (max-width: 1199px) {
+                @include positionBL(absolute, 1px, 0);
+            }
+            @media screen and (min-width: $desktop) {
                 @include positionBL(absolute, 1px, 0);
             }
 		}
 	}
+}
+@media screen and (min-width: $desktop) {
+    .page.list {
+        margin-top: 32px;
+        margin-bottom: 32px;
+
+    }
 }
 // // Header Contacts
 .contacts-item {
@@ -169,6 +202,7 @@
         margin-bottom: 16px;
     }
     @media screen and (min-width: $desktop) {
+        display: inline-flex;
         margin-right: 30px;
     }
 }
@@ -235,10 +269,12 @@
         padding: 60px;
         text-align: center;
     }
+    @media screen and (min-width: $tablet) and (max-width: 1199px) {
+        justify-content: space-between;  
+       }
     @media screen and (min-width: $tablet) {
         display: flex;
         flex-grow: 1;
-        justify-content: space-between; 
         max-height: 80px;  
        }
 }

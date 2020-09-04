@@ -889,13 +889,12 @@ template {
   }
 }
 
-.head-container {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+@media screen and (min-width: 1200px) {
+  .page-header {
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 1200px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -923,6 +922,20 @@ template {
   }
 }
 
+.head-container {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+@media screen and (max-width: 1199px) {
+  .head-container {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .head-container {
     width: 60px;
@@ -933,6 +946,13 @@ template {
   .head-container {
     width: 80px;
     border-bottom: 1px solid #ececec;
+  }
+}
+
+@media screen {
+  .head-container {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -961,6 +981,16 @@ template {
 
 @media screen and (min-width: 1200px) {
   .head-contacts {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
     margin-left: 305px;
   }
 }
@@ -975,6 +1005,14 @@ template {
   text-decoration: none;
   line-height: 1.14;
   letter-spacing: 0.02em;
+}
+
+@media screen and (max-width: 767px) {
+  .head-contacts .link {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.16;
+  }
 }
 
 .head-contacts .link:focus {
@@ -1013,7 +1051,7 @@ template {
 
 @media screen and (min-width: 1200px) {
   .page {
-    margin-left: 85px;
+    margin-left: 93px;
   }
 }
 
@@ -1054,6 +1092,22 @@ template {
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+@media screen and (max-width: 767px) {
+  .page .link {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.16;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .page .link {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.16;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .page-item:not(:last-child) {
     margin-bottom: 40px;
@@ -1082,11 +1136,26 @@ template {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .link.current::after {
     position: absolute;
     bottom: 1px;
     left: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .link.current::after {
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .page.list, .page.networks-list, .page.benefits-list, .page.duties-list, .page.team-list {
+    margin-top: 32px;
+    margin-bottom: 32px;
   }
 }
 
@@ -1121,6 +1190,9 @@ template {
 
 @media screen and (min-width: 1200px) {
   .contacts-item:not(:last-child) {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
     margin-right: 30px;
   }
 }
@@ -1202,6 +1274,14 @@ template {
   }
 }
 
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .menu {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .menu {
     display: -webkit-box;
@@ -1210,9 +1290,6 @@ template {
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
     max-height: 80px;
   }
 }
