@@ -40,7 +40,7 @@ a[href]:focus {
 
 img {
   display: block;
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 
@@ -474,19 +474,13 @@ template {
   border-radius: 4px;
 }
 
-@media screen and (max-width: 479px) {
-  .modal {
-    max-width: 450px;
-  }
-}
-
 @media screen and (min-width: 1200px) {
   .modal {
     width: 528px;
   }
 }
 
-@media screen and (min-width: 480px) and (max-width: 1199px) {
+@media screen and (max-width: 1199px) {
   .modal {
     width: 450px;
   }
@@ -1268,6 +1262,13 @@ template {
   }
   .menu-container.is-open {
     display: block;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .menu-container {
+    -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 1px 3px rgba(0, 0, 0, 0.16);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 1px 3px rgba(0, 0, 0, 0.16);
   }
 }
 
