@@ -3,22 +3,20 @@
 	width: 100%;
     max-height: 60px;
 	background-color: $white-text-color;
-	border-bottom: 1px solid $header-border-color;
     z-index: 1;
     & .container {
         width: 100%;
         margin: 0;
     }
     @media screen and (min-width: $tablet) {
-        height: 81px;
+        min-height: 81px;
     }
 
 }
 .head {
 	&-container {
-        @include centeredFlex(inline-flex);
+        display: inline-flex;
         justify-content: space-between;
-        max-height: 60px;
 	}
 	&-navi {
         @media screen and (max-width: $tablet) {
@@ -33,11 +31,23 @@
 	&-links {
         @media screen and (min-width: $tablet) {
             display: flex;
+            height: 81px;
         }
 	}
 }
+@media screen and (max-width: 767px) {
+    .head-container {
+        width: 60px;
+    }
+}
+@media screen and (min-width: $tablet) {
+    .head-container {
+        width: 80px;
+        border-bottom: 1px solid $header-border-color;
+    }
+}
 .head-contacts {
-    display: flex;
+   
     color: $primary-text-color;
     @media screen and (max-width: 767px) {
         flex-direction: column;
@@ -45,9 +55,7 @@
     }
     @media screen and (min-width: $tablet) and (max-width: 1199px) {
         margin-top: 21px;
-        margin-left: 84px;
-        flex-direction: column;
-        align-content: flex-start;
+        margin-left: 84px;   
         
     }
     @media screen and (min-width: $desktop) {
@@ -56,8 +64,8 @@
 	& .link {
 		@include fonts(14px, 500);
 		@include transitionNone;
-		padding-top: 32px;
-		padding-bottom: 32px;
+		// padding-top: 32px;
+		// padding-bottom: 32px;
 		color: $secondary-text-color;
 		fill: currentColor;
 		text-decoration: none;
@@ -130,7 +138,7 @@
                 @include positionBL(absolute, 24px, 0);
             }
             @media screen and (min-width: $tablet) {
-                @include positionBL(absolute, -1px, 0);
+                @include positionBL(absolute, 1px, 0);
             }
 		}
 	}
@@ -149,6 +157,11 @@
 			color: $accent-text-color;
 			background-color: $white-text-color;
 		}
+    }
+    @media screen and (min-width: $tablet) and (max-width: 1199px) {
+        &.mail {
+            margin-bottom: 10px;
+        }
     }
 }
 .contacts-item:not(:last-child) {
@@ -205,7 +218,6 @@
     padding: 60px, 15px;
 	@include fonts(18px, 500);
 	background-color: #fff;
-    text-align: center;
     @media screen and (max-width: 767px) {
     border-top: 1px solid $header-border-color;
     position: absolute;
@@ -218,14 +230,16 @@
 }
 }
 .menu {
-    text-align: center;
+    
     @media screen and (max-width: 767px) {
         padding: 60px;
+        text-align: center;
     }
     @media screen and (min-width: $tablet) {
         display: flex;
         flex-grow: 1;
-        justify-content: space-between;   
+        justify-content: space-between; 
+        max-height: 80px;  
        }
 }
 .page-header {
