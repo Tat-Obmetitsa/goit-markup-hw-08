@@ -233,28 +233,25 @@ header {
     fill: black;
     background-color: transparent;
     transition: 250ms fill cubic-bezier(0.4, 0, 0.2, 1);
-	& .icon-menu {
-        display: block;
-	}
-	& .icon-cross {
+    & .icon-cross {
 		display: none;
+    }
+    &.is-open .icon-cross {
+		display: block;
+    }
+    & .icon-menu {
+        display: block;
 	}
 	&.is-open .icon-menu {
 		display: none;
 	}
-	&.is-open .icon-cross {
-		display: block;
-    }
-;
     &:hover,
     &:focus {
       fill: $accent-text-color;
     }
-    @media screen  and (min-width: $tablet) {
-        display: none;
-    }
 }
 .menu-container {
+    z-index: 5;
     width: 100%;
     padding: 60px, 15px;
 	@include fonts(18px, 500);
