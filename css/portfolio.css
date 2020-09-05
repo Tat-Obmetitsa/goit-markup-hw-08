@@ -865,6 +865,10 @@ template {
   }
 }
 
+header {
+  border-bottom: 1px solid #ececec;
+}
+
 .page-header {
   width: 100%;
   max-height: 60px;
@@ -903,8 +907,12 @@ template {
     display: -ms-flexbox;
     display: flex;
     margin-top: 32px;
-    margin-bottom: 32px;
+    margin-bottom: 31px;
   }
+}
+
+.head-links {
+  border-bottom: 1px solid #ececec;
 }
 
 @media screen and (min-width: 768px) {
@@ -926,7 +934,6 @@ template {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  border-bottom: 1px solid #ececec;
 }
 
 @media screen and (max-width: 767px) {
@@ -1256,7 +1263,6 @@ template {
 
 @media screen and (max-width: 767px) {
   .menu-container {
-    border-top: 1px solid #ececec;
     position: absolute;
     top: 100%;
     left: 0;
