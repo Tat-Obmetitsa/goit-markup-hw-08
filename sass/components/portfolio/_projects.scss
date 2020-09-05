@@ -44,10 +44,10 @@
 			letter-spacing: 0.03em;
 			color: $white-text-color;
 			@media screen and (max-width: 767px) {
-				width: 402px;
+				max-width: 402px;
 			}
 			@media screen and (min-width: $tablet) and (max-width: 1199px) {
-				width: 306px;
+				max-width: 306px;
 			}
 		}
 	}
