@@ -1198,10 +1198,12 @@ template {
 .icon-envelope {
   background-size: 15px 10px;
   margin-right: 10px;
+  vertical-align: middle;
 }
 
 .icon-phone {
   margin-right: 10px;
+  vertical-align: middle;
 }
 
 .menu-button {
