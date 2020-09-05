@@ -249,6 +249,9 @@ header {
     &:focus {
       fill: $accent-text-color;
     }
+    @media screen and (min-width: $tablet) {
+        display: none;
+    }
 }
 .menu-container {
     z-index: 5;

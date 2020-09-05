@@ -1256,6 +1256,12 @@ header {
   fill: #2196f3;
 }
 
+@media screen and (min-width: 768px) {
+  .menu-button {
+    display: none;
+  }
+}
+
 .menu-container {
   z-index: 5;
   width: 100%;
