@@ -50,7 +50,6 @@
 	}
 	&-bg {
 		@include centeredFlex(inline-flex);
-		margin-bottom: 30px;
 		height: 120px;
 		background-color: $secondary-bcg-color;
 		width: 100%;

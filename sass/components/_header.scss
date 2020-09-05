@@ -167,7 +167,7 @@ header {
                 @include positionBL(absolute, 3px, 0);
             }
             @media screen and (min-width: $desktop) {
-                @include positionBL(absolute, 2px, 0);
+                @include positionBL(absolute, 3px, 0);
             }
 		}
 	}
@@ -231,9 +231,10 @@ header {
 	height: 40px;
     width: 40px;
     fill: black;
-	background-color: transparent;
+    background-color: transparent;
+    transition: 250ms fill cubic-bezier(0.4, 0, 0.2, 1);
 	& .icon-menu {
-		display: block;
+        display: block;
 	}
 	& .icon-cross {
 		display: none;
@@ -244,6 +245,7 @@ header {
 	&.is-open .icon-cross {
 		display: block;
     }
+;
     &:hover,
     &:focus {
       fill: $accent-text-color;
@@ -263,12 +265,16 @@ header {
     left: 0;
     display: none;
     &.is-open {
-		display: block;
+        display: block;
+        transform: translateY(0);
+        visibility: visible;
+        pointer-events: initial;
     }
-}
-@media screen and (max-width: 767px) {
+    @media screen and (max-width: 767px) {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 1px 3px rgba(0, 0, 0, 0.16);
 }
+}
+
 }
 .menu {
     

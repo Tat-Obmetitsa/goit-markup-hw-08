@@ -65,9 +65,15 @@
 	@media screen and (min-width: $desktop) {
 		margin-top: 20px;
 	}
+	@media screen and (max-width: 767px) {
+		@include fonts(14px, normal);
 }
+	}
 // Footer icon list
 .networks {
+	@media screen and (min-width: $desktop) {
+		margin-right: 93px;
+	}
 	margin-top: 60px;
 	@media screen and (min-width: $desktop) {
 	width: 270px;
